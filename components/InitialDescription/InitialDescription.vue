@@ -13,5 +13,7 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
 }
 </style>

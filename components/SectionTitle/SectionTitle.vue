@@ -16,7 +16,7 @@ defineProps<{ title: string }>()
 .title {
   text-align: center;
   display: flex;
-  font-size: 4rem;
+  font-size: 2.8rem;
   font-weight: 200;
   height: 3rem;
   width: auto;
@@ -25,20 +25,24 @@ defineProps<{ title: string }>()
   position: relative;
   margin-bottom: 3rem;
 
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+
   &:after, &:before {
     content: '';
     height: .0625rem;
     position: absolute;
-    width: 1rem;
+    width: .5rem;
     background-color: #000;
   }
 
   &:before {
-    left: -3rem;
+    left: -2rem;
   }
 
   &:after {
-    right: -3rem;
+    right: -2rem;
   }
 }
 </style>

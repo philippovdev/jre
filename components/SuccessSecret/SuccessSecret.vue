@@ -1,7 +1,7 @@
 <template>
   <h3 :class="s.title">В чем же секрет нашего успеха?</h3>
   <a-row :gutter="16">
-    <a-col :span="24" :lg="{span: 8}">
+    <a-col :class="s.col" :span="24" :lg="{span: 8}">
       <feature-card icon="professional" title="Высокий профессионализм">
         <template #text>
           Высокий профессионализм, прекрасное знание рынка и глубокое понимание всех вопросов возникающих в данной
@@ -10,7 +10,7 @@
         </template>
       </feature-card>
     </a-col>
-    <a-col :span="24" :lg="{span: 8}">
+    <a-col :class="s.col" :span="24" :lg="{span: 8}">
       <feature-card icon="individual-approach" title="Индивидуальный подход">
         <template #text>
           Мы готовы к любым, самым сложным задачам, которые могут возникнуть при удаленной регистрации сделок с
@@ -43,4 +43,12 @@ import 'ant-design-vue/lib/grid/style/index.css';
   margin-bottom: 6rem;
   text-align: center;
 }
+
+.col {
+  margin-bottom: 5rem;
+  @media (min-width: 1024px) {
+    margin-bottom: 0;
+  }
+}
+
 </style>

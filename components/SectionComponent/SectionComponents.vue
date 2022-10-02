@@ -9,6 +9,9 @@
 
 <style module="s" lang="scss">
 .section {
-  padding: 10rem 0;
+  padding: 7rem 0;
+  @media (min-width: 1024px) {
+    padding: 10rem 0;
+  }
 }
 </style>
