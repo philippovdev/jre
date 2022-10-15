@@ -8,12 +8,16 @@ export default defineNuxtConfig({
     // SCSS file in the project
     '~/assets/css/main.scss'
   ],
+  target: "static",
   build: {
     loaders: {
       less: {
         javascriptEnabled: true,
       },
     },
+  },
+  generate: {
+    fallback: true
   },
   vite: {
     plugins: [svgLoader()]
