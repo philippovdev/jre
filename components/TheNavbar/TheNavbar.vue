@@ -46,12 +46,13 @@ const links = [
   z-index: 10;
   padding: 1rem 0;
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   @apply w-full flex;
 }
 
 .logo {
   border: .0625rem solid black;
-  padding: 2rem;
+  padding: 1rem 2rem;
 
   & > span:not(:last-child) {
     margin-right: 1rem;
