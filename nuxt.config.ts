@@ -2,15 +2,6 @@
 import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
-  apps: [
-    {
-      name: 'JRE Site',
-      exec_mode: 'cluster',
-      instances: 'max', // Or a number of instances
-      script: './node_modules/nuxt/bin/nuxt.js',
-      args: 'start'
-    }
-  ],
   app: {
     head: {
       htmlAttrs: {
