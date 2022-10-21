@@ -1,5 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 import svgLoader from 'vite-svg-loader';
+import gzipPlugin from 'rollup-plugin-gzip'
 
 export default defineNuxtConfig({
   app: {
@@ -69,6 +70,6 @@ export default defineNuxtConfig({
     fallback: true
   },
   vite: {
-    plugins: [svgLoader()]
+    plugins: [svgLoader(), gzipPlugin()]
   }
 })
