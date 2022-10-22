@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ title: string }>()
+import {PropType} from "@vue/runtime-core";
+
+defineProps<{ title: string, small?: boolean }>()
 </script>
 
 <style module="s" lang="scss">
@@ -16,7 +18,7 @@ defineProps<{ title: string }>()
 .title {
   text-align: center;
   display: flex;
-  font-size: 2.8rem;
+  font-size: v-bind("small ? '1.5rem' : '2.8rem'");
   font-weight: 200;
   height: 3rem;
   width: auto;
@@ -26,7 +28,7 @@ defineProps<{ title: string }>()
   margin-bottom: 3rem;
 
   @media (min-width: 1024px) {
-    font-size: 4rem;
+    font-size: v-bind("small ? '2.5rem' : '4rem'");
   }
 
   &:after, &:before {
@@ -38,11 +40,11 @@ defineProps<{ title: string }>()
   }
 
   &:before {
-    left: -2rem;
+    left: v-bind("small ? 0 : '-2rem'");
   }
 
   &:after {
-    right: -2rem;
+    right: v-bind("small ? 0 : '-2rem'");
   }
 }
 </style>

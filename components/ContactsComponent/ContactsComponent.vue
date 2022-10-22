@@ -5,20 +5,38 @@
     <li>Прежде чем на что-то решиться — проконсультируйтесь, узнайте детали.</li>
     <li>Вы можете получить профессиональную консультацию абсолютно бесплатно, это ни к чему Вас не обязывает в будущем.</li>
     <li>Гарантия конфиденциальности по любым обращениям.</li>
-    <li>Телефон в Москве: +7 (499) 399-3665</li>
-    <li>Телефон в Израиле: +972 (3) ххх-хххх</li>
-    <li>Telegramm/Whatsapp: +79269104646</li>
-
   </ul>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-10">
+    <a target="_blank" :href="contact.link" v-for="contact in contacts" :key="contact.title" class="mb-5 sm:mb-0">
+      <div class="flex flex-col items-center cursor-pointer">
+        <div class="flex justify-center items-center w-16 h-16 rounded-full bg-gray-100">
+          <component width="30" :is="findIcon(contact.icon)" />
+        </div>
+        <div class="text-center mt-2">
+          <h4 class="text-lg font-bold">{{ contact.title }}</h4>
+          <p class="text-gray-500">{{ contact.text }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useIcons from "@/composables/useIcons";
+
+const contacts = [
+  { title: 'Телефон', text: '+7 (495) 123-45-67', value: '+74951234567', icon: 'phone', link: 'tel:+74951234567' },
+  { title: 'WhatsApp', text: '+7 (926) 910-46-46', value: '+79269104646', icon: 'whatsapp', link: 'https://wa.me/79269104646' },
+  { title: 'Telegram', text: '+7 (926) 910-46-46', value: '+79269104646', icon: 'telegram', link: 'https://telegram.me/+79269104646' },
+]
+const { findIcon } = useIcons();
+</script>
 
 <style module="s" lang="scss">
 .title {
   font-size: 1.5rem;
   font-weight: 400;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 .text {

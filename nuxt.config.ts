@@ -9,8 +9,23 @@ export default defineNuxtConfig({
         lang: 'ru'
       },
       charset: 'utf-8',
-      viewport: 'width=500, initial-scale=1',
+      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=3',
       title: 'Операции с недвижимостью в России удаленно',
+      script: [
+        {
+          src: "//code.jivo.ru/widget/LW5jAzVGhh",
+          async: true
+        }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'android-chrome', sizes: '192x192', href: '/android-chrome-192x192.png' },
+        { rel: 'android-chrome', sizes: '512x512', href: '/android-chrome-512x512.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'icon', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ],
       meta: [
         {
           name: 'description',
@@ -66,10 +81,13 @@ export default defineNuxtConfig({
       },
     },
   },
-  generate: {
-    fallback: true
-  },
   vite: {
+    server: {
+      hmr: {
+        protocol: 'ws',
+        host: 'localhost'
+      }
+    },
     plugins: [svgLoader(), gzipPlugin()]
   }
 })

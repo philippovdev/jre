@@ -8,7 +8,11 @@
       </span>
       <nav class="flex items-center" v-if="!isMobile">
         <ul :class="s.navInner">
-          <li :class="s.link" v-for="link in links">{{ link.title }}</li>
+          <li :class="s.link" v-for="link in links">
+            <nuxt-link :to="{ hash: `#${link.name}` }" :external="true">
+              {{ link.title }}
+            </nuxt-link>
+          </li>
         </ul>
       </nav>
       <nav v-else class="h-full items-center">

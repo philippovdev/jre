@@ -11,7 +11,11 @@
     </span>
     <nav>
       <ul :class="s.links">
-        <li v-for="link in links" :key="link.name">{{ link.title }}</li>
+        <li v-for="link in links" :key="link.name" @click="open = false">
+          <nuxt-link class="w-full h-full block" :to="{ hash: `#${link.name}` }" :external="true">
+            {{ link.title }}
+          </nuxt-link>
+        </li>
       </ul>
     </nav>
   </a-drawer>
@@ -34,12 +38,14 @@ const handleToggleMenu = () => {
   overflow: scroll;
   padding-top: 5rem;
   & > li {
-    padding: 1.5rem 0;
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
     &:active {
       background-color: #fafafa;
+    }
+    & a {
+      padding: 1.5rem 0;
     }
   }
 }

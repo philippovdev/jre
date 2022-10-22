@@ -4,7 +4,7 @@
   <section-component>
     <initial-description/>
   </section-component>
-  <section-component :class="s.darkenSection">
+  <section-component :class="s.darkenSection" id="about-us">
     <template #title>
       <section-title title="О Нас"/>
     </template>
@@ -13,26 +13,42 @@
   <section-component>
     <success-secret/>
   </section-component>
+  <section-component :class="s.bright" id="services">
+    <template #title>
+      <section-title title="Наши Услуги"/>
+    </template>
+    <our-services />
+  </section-component>
+  <section-component :class="s.short">
+    <template #title>
+      <section-title small title="В процессе работы мы оказываем следующие услуги:"/>
+    </template>
+    <additional-services />
+  </section-component>
   <section-component :class="[s.darkenSection, s.short]">
     <proud-component/>
   </section-component>
-  <section-component>
+  <section-component id="contacts">
     <template #title>
       <section-title title="Контакты"/>
     </template>
     <contacts-component/>
+  </section-component>
+  <section-component :class="s.darkenSection" id="partnership">
+    <template #title>
+      <section-title title="Партнерство"/>
+    </template>
+    <partnership-component/>
+  </section-component>
+  <section-component :class="[s.footer, s.short]">
+    <footer-component />
   </section-component>
 </template>
 
 <script setup>
 import {HeroComponent} from "@/components/HeroComponent";
 import {TheNavbar} from "@/components/TheNavbar";
-import {InitialDescription} from "@/components/InitialDescription";
 import {SectionComponent} from "@/components/SectionComponent";
-import {AboutUs} from "@/components/AboutUs";
-import {SuccessSecret} from "@/components/SuccessSecret";
-import {ProudComponent} from "@/components/ProudComponent";
-import {ContactsComponent} from "@/components/ContactsComponent";
 </script>
 
 <style module="s" lang="scss">
@@ -41,6 +57,13 @@ import {ContactsComponent} from "@/components/ContactsComponent";
 }
 
 .short {
-  padding: 7rem 0;
+  padding: 5rem 0;
+}
+.bright {
+  background: rgb(125,161,126);
+  background: linear-gradient(349deg, rgba(125,161,126,1) 17%, rgba(200,235,201,1) 54%);
+}
+.footer {
+  background-color: #2d2d2d;
 }
 </style>
