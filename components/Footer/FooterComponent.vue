@@ -9,7 +9,7 @@ const year = currentYear === 2021 ? currentYear : `2021 - ${currentYear}`;
 
 <style module="s" lang="scss">
 .text {
-  color: #564d24;
+  color: #cbc94e;
   text-align: center;
 }
 </style>

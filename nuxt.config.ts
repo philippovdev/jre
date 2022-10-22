@@ -82,12 +82,6 @@ export default defineNuxtConfig({
     },
   },
   vite: {
-    server: {
-      hmr: {
-        protocol: 'ws',
-        host: 'localhost'
-      }
-    },
     plugins: [svgLoader(), gzipPlugin()]
   }
 })
