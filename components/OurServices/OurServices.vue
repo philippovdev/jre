@@ -4,7 +4,7 @@
       <span :class="s.icon">
         <component width="60" :is="findIcon(service.icon)"/>
       </span>
-      <h4 :class="s.title">{{ service.title }}</h4>
+      <h2 :class="s.title">{{ service.title }}</h2>
     </div>
   </div>
 </template>
