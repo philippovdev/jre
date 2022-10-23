@@ -5,8 +5,7 @@ module.exports = {
       exec_mode: 'cluster',
       instances: 'max',
       script: 'npm',
-      args: 'run dev',
-      port: 5000
+      args: 'run preview'
     }
   ]
 }

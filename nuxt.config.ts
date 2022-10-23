@@ -1,6 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 import svgLoader from 'vite-svg-loader';
 import gzipPlugin from 'rollup-plugin-gzip'
+import copy from 'rollup-plugin-copy'
 
 export default defineNuxtConfig({
   app: {
@@ -18,13 +19,13 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'android-chrome', sizes: '192x192', href: '/android-chrome-192x192.png' },
-        { rel: 'android-chrome', sizes: '512x512', href: '/android-chrome-512x512.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        { rel: 'icon', sizes: '32x32', href: '/favicon-32x32.png' },
-        { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
-        { rel: 'manifest', href: '/site.webmanifest' }
+        {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+        {rel: 'android-chrome', sizes: '192x192', href: '/android-chrome-192x192.png'},
+        {rel: 'android-chrome', sizes: '512x512', href: '/android-chrome-512x512.png'},
+        {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'},
+        {rel: 'icon', sizes: '32x32', href: '/favicon-32x32.png'},
+        {rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png'},
+        {rel: 'manifest', href: '/site.webmanifest'}
       ],
       meta: [
         {
