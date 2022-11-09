@@ -10,7 +10,7 @@
     <a target="_blank" :href="contact.link" v-for="contact in contacts" :key="contact.title" class="mb-5 sm:mb-0">
       <div class="flex flex-col items-center cursor-pointer">
         <div class="flex justify-center items-center w-16 h-16 rounded-full bg-gray-100">
-          <component width="30" :is="findIcon(contact.icon)" />
+          <component v-if="contact.icon" width="30" :is="findIcon(contact.icon)" />
         </div>
         <div class="text-center mt-2">
           <h4 class="text-lg font-bold">{{ contact.title }}</h4>
@@ -22,14 +22,14 @@
 </template>
 
 <script setup lang="ts">
-import useIcons from "@/composables/useIcons";
+import useIconsClient from "~/composables/useIcons.client";
 
 const contacts = [
-  { title: 'Телефон', text: '+7 (495) 123-45-67', value: '+74951234567', icon: 'phone', link: 'tel:+74951234567' },
+  { title: 'Телефон', text: '+7 (499) 399-366-5', value: '+74993993665', icon: 'phone', link: 'tel:+74993993665' },
   { title: 'WhatsApp', text: '+7 (926) 910-46-46', value: '+79269104646', icon: 'whatsapp', link: 'https://wa.me/79269104646' },
   { title: 'Telegram', text: '+7 (926) 910-46-46', value: '+79269104646', icon: 'telegram', link: 'https://telegram.me/+79269104646' },
 ]
-const { findIcon } = useIcons();
+const { findIcon } = useIconsClient();
 </script>
 
 <style module="s" lang="scss">

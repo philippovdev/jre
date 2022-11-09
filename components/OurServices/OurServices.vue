@@ -2,7 +2,7 @@
   <div :class="s.wrapper">
     <div v-for="service in services" :key="service.id" :class="s.card">
       <span :class="s.icon">
-        <component width="60" :is="findIcon(service.icon)"/>
+        <component v-if="service.icon" width="60" :is="findIcon(service.icon)"/>
       </span>
       <h2 :class="s.title">{{ service.title }}</h2>
     </div>
@@ -12,14 +12,14 @@
 <script setup lang="ts">
 import {reactive} from "vue";
 import {v4 as uuidv4} from 'uuid';
-import useIcons from "@/composables/useIcons";
+import useIconsClient from "~/composables/useIcons.client";
 
-const {findIcon} = useIcons()
+const {findIcon} = useIconsClient()
 
 const services = reactive([
   {
     id: uuidv4(),
-    title: "Продажа и покупка жилой ит коммерческой недвижимости",
+    title: "Продажа и покупка жилой и коммерческой недвижимости",
     icon: "buy-sale"
   },
   {

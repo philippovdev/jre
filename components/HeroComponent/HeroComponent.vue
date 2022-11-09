@@ -44,6 +44,11 @@
 
     & h1 {
       z-index: 1;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      @media (min-width: 768px) {
+        font-size: 3.5rem;
+      }
     }
   }
 }

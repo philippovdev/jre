@@ -75,6 +75,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.scss'
   ],
   target: "static",
+  ssr: true,
   build: {
     loaders: {
       less: {
