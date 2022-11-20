@@ -1,11 +1,13 @@
 <template>
   <div :class="s.wrapper">
+    <client-only>
     <div v-for="service in services" :key="service.id" :class="s.card">
       <span :class="s.icon">
         <component v-if="service.icon" width="60" :is="findIcon(service.icon)"/>
       </span>
       <h2 :class="s.title">{{ service.title }}</h2>
     </div>
+    </client-only>
   </div>
 </template>
 

@@ -1,7 +1,9 @@
 <template>
+  <client-only>
   <span class="flex justify-center">
     <component v-if="icon" width="60" height="60" :is="findIcon(icon)"/>
   </span>
+  </client-only>
   <h3 class="text-center text-xl font-normal py-10">{{ title }}</h3>
   <p v-if="$slots.text" :class="s.text">
     <slot name="text"/>
@@ -12,7 +14,7 @@
 import useIconsClient from '~/composables/useIcons.client';
 
 defineProps<{ title: string, icon: string | unknown }>();
-const {findIcon} = useIconsClient();
+const { findIcon } = useIconsClient();
 </script>
 
 <style module="s" lang="scss">
