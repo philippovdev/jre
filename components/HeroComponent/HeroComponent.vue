@@ -4,7 +4,7 @@
       <div :class="s.headerInner">
         <p :class="s.disabled">Оперативное решение задач</p>
         <h1 class="my-1">Недвижимость в Москве</h1>
-        <p :class="['w-full md:w-1/2', s.disabled]">Вы живёте в Израиле, США, Канаде, Германии, но у Вас есть недвижимость в Москве,
+        <p :class="['w-full md:w-1/2', s.disabled]">Вы живёте в России, Израиле, США, Канаде, Германии, но у Вас есть недвижимость в Москве,
           Подмосковье или Санкт-Петербурге, и Вам надо её продать? С удовольствием поможем Вам в этом!</p>
       </div>
       <div :class="s.building" />
@@ -68,10 +68,10 @@ picture {
 
 .building {
   position: absolute;
-  top: 29rem;
+  top: 31rem;
   right: 0;
   left: 0;
-  height: 18.75rem;
+  height: 14.75rem;
   width: 100%;
   max-width: 100%;
   background-size: contain;
